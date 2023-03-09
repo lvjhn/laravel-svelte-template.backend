@@ -29,9 +29,9 @@ composer install
 2. Generate environment file (copy `.env.example` to `.env`)
 3. Generate app key `php artisan key:generate`
 4. Check if running: 
-    * HTTP Server - `php artisan serve` 
-    * Websocket Server - `php artisan websocket:serve` 
-    * Queue Server - `php artisan queue:listen`
+    * **HTTP Server** - `php artisan serve` 
+    * **Websocket Server** - `php artisan websocket:serve` 
+    * **Queue Server** - `php artisan queue:listen`
 
 
 ## [Optional]
