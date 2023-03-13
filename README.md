@@ -14,6 +14,7 @@ made with with Laravel (as back-end) and Svelte (as front-end).
   * **Realtime Websockets** - `beyondcode/laravel-websockets`
   * **Redis Driver** - `predis/predis`
   * **Nested Sets** - `kalnoy/nestedset` 
+  * **Octane** - `laravel/octane`
 
 ## Installation 
 ```
@@ -23,19 +24,23 @@ then
 ```
 composer install
 ```
+and 
+```
+npm install
+```
 
 ## Next Steps 
 1. Change app name in `composer.json` and `run.sh` 
 2. Generate environment file (copy `.env.example` to `.env`)
 3. Generate app key `php artisan key:generate`
-4. Check if running: 
-    * **HTTP Server** - `php artisan serve` 
+4. Migrate database `php artisan migrate`
+5. Check if the following can be run: 
+    * **HTTP Server** - `php artisan octane:start --watch --port 8000` 
     * **Websocket Server** - `php artisan websocket:serve` 
     * **Queue Server** - `php artisan queue:listen`
-
+    * **Horizon** - `php artisan horizon`
 
 ## [Optional]
-* Install `Laravel Octane`
 * Use `soketi` instead of `beyondcode/laravel-websockets` 
 
 
