@@ -1,1 +1,1 @@
-php artisan octane:start --watch --host api.untitled-app.localhost --port=8080
+php artisan octane:start --watch --host backend.untitled-app.localhost --port=8080

@@ -15,7 +15,16 @@ use App\Events\PingChannel\PingEvent;
 |
 */
 
-Route::get('ping', function() {
+/** 
+ * Load Controllers
+ */
+use App\Http\Controllers\AuthController;
+
+
+/** 
+ * Set up Routes
+ */
+Route::get('/ping', function() {
     broadcast(new PingEvent());
     return [ 
         "status" => "ok", 
@@ -23,9 +32,15 @@ Route::get('ping', function() {
     ];
 });
 
+Route::prefix("/auth")
+     ->group(function() {
+        Route::get("/login",  [AuthController::class, 'login']);
+        Route::get("/logout", [AuthController::class, 'logout']);
+        Route::get("/user",   [AuthController::class, 'user'])
+             ->middleware("auth");
+     });
+
 Route::middleware('auth')->group(function() {
-    Route::get('/user', function(Request $request) {
-        return $request->user();    
-    });
+  
 });
 
