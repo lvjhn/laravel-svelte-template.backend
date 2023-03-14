@@ -35,7 +35,7 @@ npm install
 3. Generate app key `php artisan key:generate`
 4. Migrate database `php artisan migrate`
 5. Check if the following can be run: 
-    * **HTTP Server** - `php artisan octane:start --watch --port 8000` 
+    * **HTTP Server** - `php artisan octane:start --watch --port 8080` 
     * **Websocket Server** - `php artisan websocket:serve` 
     * **Queue Server** - `php artisan queue:listen`
     * **Horizon** - `php artisan horizon`

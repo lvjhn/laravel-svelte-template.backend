@@ -1,1 +1,1 @@
-php artisan serve --host api.untitled-app.localhost
+php artisan octane:start --watch --host api.untitled-app.localhost --port=8080
