@@ -15,17 +15,17 @@ use App\Events\PingChannel\PingEvent;
 |
 */
 
+Route::get('ping', function() {
+    broadcast(new PingEvent());
+    return [ 
+        "status" => "ok", 
+        "message" => "pong"
+    ];
+});
+
 Route::middleware('auth')->group(function() {
     Route::get('/user', function(Request $request) {
         return $request->user();    
     });
 });
 
-Route::get('ping', function() {
-    broadcast(new PingEvent());
-
-    return [ 
-        "status" => "ok", 
-        "message" => "pong"
-    ];
-});
